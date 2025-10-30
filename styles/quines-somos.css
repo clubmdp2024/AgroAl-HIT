@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+:root {
+  --primary-color: #9edb18; /* verde principal */
+  --secondary-color: ; /* Verde secundario */
+  --text-color: #221b21; /* Color del texto */
+  --background-color: #ffffff; /* Fondo */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que los márgenes y rellenos no afecten las dimensiones */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  width: 100%;
+  align-items: center;
+  padding-left: 140px;
+  padding-right: 140px;
+  padding-top: 10px;
+}
+.logo_principal {
+  img {
+    width: 190px;
+  }
+}
+.list_navigator ul {
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+}
+.list_navigator li {
+  display: inline;
+  font-family: Merriweather;
+  font-weight: 400;
+  font-size: 14px;
+  transition: font-weight 0.3s ease, font-size 0.3s ease;
+}
+.list_navigator a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.list_navigator li:hover {
+  font-weight: 500;
+  font-size: 15px;
+}
+.chosen_page a {
+  color: var(--primary-color);
+}
+.container_background1 {
+  width: 100%; /* Ancho del contenedor */
+  height: 270px; /* Altura del contenedor */
+  overflow: hidden; /* Recorta la imagen que salga de este espacio */
+  position: absolute; /* Asegura que la imagen quede detrás del texto */
+  bottom: 0; /* Coloca la imagen en la parte inferior */
+}
+
+.container_background1 img {
+  width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+  height: auto; /* Mantén las proporciones */
+  object-fit: cover; /* Cubre todo el área visible del contenedor */
+  transform: scale(1.8); /* Zoom permanente */
+  filter: brightness(40%); /* Oscurece la imagen */
+}
+
+.container_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  position: relative; /* Necesario para posicionar el texto sobre la imagen */
+  height: 270px; /* Altura total del contenedor */
+}
+
+.container_text_principal {
+  position: relative;
+  z-index: 1; /* Asegura que el texto esté por encima de la imagen */
+  text-align: center;
+  color: white; /* Cambia el color del texto si lo necesitas */
+  padding-top: 20px; /* Espacio superior para el texto */
+}
+.container_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  img {
+    width: 340px;
+  }
+}
+.company_objectives {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    padding-top: 20px;
+    font-family: Merriweather;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-color);
+    width: 900px;
+  }
+}
+.container_vision_mission {
+  width: 70%; /* Ocupa solo el 70% del ancho */
+  margin: 0 auto; /* Centra el contenedor */
+  display: flex;
+  justify-content: space-between; /* Espacio entre columnas */
+  gap: 20px; /* Espacio entre las columnas */
+  padding-top: 70px;
+}
+.mission, .vision {
+  width: 50%;
+  text-align: center; /* Centra los h2 */
+}
+
+.mission h2, .vision h2 {
+  font-family: Merriweather;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--text-color);
+  text-align: center; /* Asegura que los h2 estén centrados */
+}
+
+.mission p, .vision p {
+  font-family: Merriweather;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--text-color);
+  text-align: justify; /* Justifica los párrafos */
+  padding-top: 10px;
+}

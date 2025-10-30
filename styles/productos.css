@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+:root {
+  --primary-color: #9edb18; /* verde principal */
+  --secondary-color: ; /* Verde secundario */
+  --text-color: #221b21; /* Color del texto */
+  --background-color: #dae6d6; /* Fondo */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que los márgenes y rellenos no afecten las dimensiones */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  width: 100%;
+  align-items: center;
+  padding-left: 140px;
+  padding-right: 140px;
+  padding-top: 10px;
+}
+.logo_principal {
+  img {
+    width: 190px;
+  }
+}
+.list_navigator ul {
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+}
+.list_navigator li {
+  display: inline;
+  font-family: Merriweather;
+  font-weight: 400;
+  font-size: 14px;
+  transition: font-weight 0.3s ease, font-size 0.3s ease;
+}
+.list_navigator a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.list_navigator li:hover {
+  font-weight: 500; 
+  font-size: 15px; 
+}
+.chosen_page a {
+  color: var(--primary-color);
+}
