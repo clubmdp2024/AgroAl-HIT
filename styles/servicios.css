@@ -243,3 +243,121 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* ============================= */
+/* 📱 RESPONSIVE PRODUCTOS */
+/* ============================= */
+@media (max-width: 768px) {
+  /* Ajuste del header */
+  .header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .logo_principal img {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .list_navigator ul {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .list_navigator a {
+    font-size: 14px;
+  }
+
+  /* Sección de servicios/productos */
+  .servicios-section {
+    padding: 50px 20px;
+  }
+
+  .servicio-header h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .servicio-header p {
+    font-size: 0.95em;
+    margin-bottom: 30px;
+  }
+
+  /* Tarjetas */
+  .servicio-lista {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .item-servicio {
+    padding: 25px 15px;
+    border-radius: 12px;
+  }
+
+  .item-servicio img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+
+  .item-servicio h3 {
+    font-size: 1em;
+    margin: 12px 0 8px;
+  }
+
+  .item-servicio p {
+    font-size: 0.9em;
+  }
+
+  /* Asistencia */
+  .asistencia-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .asistencia-item img {
+    height: 200px;
+  }
+
+  .asistencia-item p {
+    font-size: 0.9em;
+    padding: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 15px;
+    font-size: 14px;
+  }
+
+  .footer-info p {
+    font-size: 0.9em;
+  }
+
+  /* WhatsApp flotante */
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .whatsapp-content {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+.whatsapp-icon {
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatsapp-icon img {
+  width: 40px;
+  height: auto;
+}
+  .whatsapp-content span {
+    display: none;
+  }
+}

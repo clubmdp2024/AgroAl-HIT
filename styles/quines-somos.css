@@ -16,6 +16,7 @@ body {
   font-family: Merriweather, serif;
   color: var(--text-color);
 }
+
 /* ===============================
    QUIÉNES SOMOS
 =============================== */
@@ -96,38 +97,6 @@ body {
 /* ============================= */
 /* SECCIONES */
 /* ============================= */
-.container_1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 270px;
-  text-align: center;
-  color: white;
-}
-
-.container_background1 {
-  position: absolute;
-  width: 100%;
-  height: 270px;
-  overflow: hidden;
-}
-
-.container_background1 img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transform: scale(1.8);
-  filter: brightness(40%);
-}
-
-.container_text_principal {
-  position: relative;
-  z-index: 1;
-  padding-top: 20px;
-}
-
 .container_logo {
   display: flex;
   justify-content: center;
@@ -144,12 +113,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 120px;
 }
+
 .company_objectives p {
   padding-top: 20px;
   font-weight: 300;
@@ -199,7 +170,7 @@ body {
 
   .list_navigator ul {
     gap: 25px;
-    flex-wrap: wrap; /* Menú sigue en línea, pero se adapta si hay poco espacio */
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -237,31 +208,41 @@ body {
 @media (max-width: 560px) {
   .header {
     flex-direction: column;
-    padding: 15px 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
+    background-color: #dae6d6;
     text-align: center;
   }
 
   .logo_principal img {
-    width: 140px;
-    margin-bottom: 10px;
+    width: 130px;
+    margin-bottom: 8px;
+  }
+
+  .list_navigator {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .list_navigator ul {
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 18px;
+    list-style: none;
   }
 
-  .container_background1 {
-    height: 180px;
+  .list_navigator li {
+    font-size: 13px;
+    font-weight: 400;
   }
 
-  .container_text_principal h1 {
-    font-size: 1.8rem;
-  }
-
-  .container_text_principal p {
-    font-size: 0.9rem;
+  .chosen_page a {
+    color: var(--primary-color);
+    font-weight: 500;
   }
 
   .container_logo img {
@@ -283,22 +264,35 @@ body {
     font-size: 13px;
   }
 
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+  }
+
   .whatsapp-content {
+    background: #25d366;
+    border-radius: 50%;
     width: 55px;
     height: 55px;
-    bottom: 20px;
-    right: 20px;
-    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   }
 
-  .whatsapp-content img {
-    width: 26px;
+  .whatsapp-content span {
+    display: none;
+  }
+
+  .whatsapp-icon img {
+    width: 28px;
+    height: 28px;
   }
 }
-/* ==================================== /
-/ FOOTER /
-/ ==================================== */
 
+/* ==================================== */
+/* FOOTER */
+/* ==================================== */
 .footer {
   background-color: #dae6d6;
   color: #000;
@@ -334,10 +328,9 @@ body {
   padding-top: 10px;
 }
 
-/* ==================================== /
-/ BOTÓN DE WHATSAPP /
-/ ==================================== */
-
+/* ==================================== */
+/* BOTÓN DE WHATSAPP */
+/* ==================================== */
 .whatsapp-float {
   position: fixed;
   bottom: 25px;
@@ -366,16 +359,14 @@ body {
 .whatsapp-icon {
   background: #25d366;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .whatsapp-icon img {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: auto;
 }
 
 .whatsapp-content:hover {
