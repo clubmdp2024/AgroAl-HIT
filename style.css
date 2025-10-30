@@ -290,7 +290,7 @@ body {
 .quienes-somos h2 {
   color: #fff;
   margin-bottom: 20px;
-  font-size: 2.2rem;
+  font-size: 3.2rem;
 }
 
 .quienes-somos p {
@@ -384,108 +384,4 @@ body {
 .whatsapp-content:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* ===============================
-   RESPONSIVE DESIGN
-=============================== */
-@media (max-width: 980px) {
-  .header {
-    padding: 12px 40px;
-  }
-
-  .hero {
-    padding: 60px 40px;
-    text-align: center;
-  }
-
-  .hero-content {
-    flex-direction: column;
-  }
-
-  .texto-hero,
-  .imagen-hero {
-    flex: 1 1 100%;
-  }
-
-  .servicios {
-    padding: 80px 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .list_navigator ul {
-    gap: 16px;
-  }
-
-  .whatsapp-content span {
-    display: none;
-  }
-
-  .whatsapp-content {
-    background: none;
-    box-shadow: none;
-    padding: 0;
-  }
-
-  .footer {
-    font-size: 14px;
-    padding: 40px 16px;
-  }
-}
-/* ============================= */
-/* RESPONSIVE INDEX */
-/* ============================= */
-@media (max-width: 980px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 40px;
-  }
-
-  .logo_principal img {
-    width: 150px;
-    margin-bottom: 10px;
-  }
-
-  .list_navigator ul {
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .list_navigator li {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 560px) {
-  body {
-    font-size: 14px;
-  }
-
-  .header {
-    padding: 12px 18px;
-  }
-
-  .logo_principal img {
-    width: 130px;
-  }
-
-  .list_navigator ul {
-    gap: 12px;
-  }
-
-  .list_navigator li {
-    font-size: 12px;
-  }
-
-  .footer {
-    font-size: 14px;
-    padding: 40px 15px;
-  }
-
-  .footer-copy {
-    font-size: 12px;
-  }
 }
