@@ -1,190 +1,440 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+
+/* ============================= */
+/* VARIABLES Y BASE */
+/* ============================= */
 :root {
-  --primary-color: #9edb18; /* verde principal */
-  --secondary-color: ; /* Verde secundario */
-  --text-color: #221b21; /* Color del texto */
-  --background-color: #dae6d6; /* Fondo */
+  --primary-color: #9edb18;
+  --text-color: #221b21;
+  --background-color: #dae6d6;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Asegura que los márgenes y rellenos no afecten las dimensiones */
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Merriweather", serif;
+  background-color: #fff;
+  color: var(--text-color);
+  font-size: 16px; /* Igual que el index */
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: var(--background-color);
-  width: 100%;
   align-items: center;
-  padding-left: 140px;
-  padding-right: 140px;
-  padding-top: 10px;
+  background-color: var(--background-color);
+  padding: 10px 140px;
 }
-.logo_principal {
-  img {
-    width: 190px;
-  }
+
+.logo_principal img {
+  width: 180px;
 }
+
 .list_navigator ul {
-  list-style-type: none;
+  list-style: none;
   display: flex;
   gap: 40px;
 }
-.list_navigator li {
-  display: inline;
-  font-family: Merriweather;
-  font-weight: 400;
-  font-size: 14px;
-  transition: font-weight 0.3s ease, font-size 0.3s ease;
-}
+
 .list_navigator a {
   text-decoration: none;
   color: var(--text-color);
+  font-size: 15px;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
-.list_navigator li:hover {
-  font-weight: 500; 
-  font-size: 15px; 
+
+.list_navigator a:hover {
+  color: var(--primary-color);
+  font-weight: 600;
 }
+
 .chosen_page a {
   color: var(--primary-color);
 }
 
 
+/* ==================================== /
+/ SECCIÓN DE PRODUCTOS /
+/ ==================================== */
 
-/* productos.css - versión corregida y lista para pegar */
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
-
-:root{
-  --primary-color: #9edb18;
-  --text-color: #221b21;
-  --background-color: #f6f8f3;
-}
-/* Contenedor principal */
-.productos-section{
-  max-width:1180px;
-  margin: 36px auto 80px;
-  padding: 0 20px;
+.productos-section {
+max-width: 1180px;
+margin: 36px auto 80px;
+padding: 0 20px;
 }
 
-/* Título */
-.productos-section h1{
-  color:var(--primary-color);
-  text-align:center;
-  margin-bottom:28px;
-  font-size:2rem;
-  letter-spacing:1px;
+.productos-section h1 {
+color: var(--primary-color);
+text-align: center;
+margin-bottom: 28px;
+font-size: 2rem;
+letter-spacing: 1px;
 }
 
-/* Tarjeta producto */
-.producto{
-  background:#fff;
-  border-radius:14px;
-  overflow:hidden;
-  margin: 28px auto;
-  box-shadow: 0 8px 30px rgba(34,27,33,0.06);
-  display:grid;
-  grid-template-columns: 1fr 420px; /* imagen izquierda, info derecha */
-  gap: 0;
-  align-items:stretch;
+.producto {
+background: #fff;
+border-radius: 16px;
+overflow: hidden;
+margin: 32px auto;
+box-shadow: 0 10px 40px rgba(34, 27, 33, 0.08);
+display: grid;
+grid-template-columns: 1fr 420px;
+align-items: stretch;
 }
 
-/* Carrusel (lado izquierdo) */
-.carrusel{
-  position:relative;
-  width:100%;
-  min-height:360px;
-  background:#e8e8e8;
-  overflow:hidden;
-}
-.carrusel img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  transform: scale(1.02);
-  transition: opacity .9s ease, transform .9s ease;
-}
-.carrusel img.active{
-  opacity:1;
-  transform: scale(1);
+/* ==================================== /
+/ CARRUSEL MEJORADO /
+/ ==================================== */
+
+.carrusel {
+position: relative;
+width: 100%;
+min-height: 380px;
+background: #eaeaea;
+overflow: hidden;
+border-top-left-radius: 16px;
+border-bottom-left-radius: 16px;
 }
 
-/* Info producto (lado derecho) */
-.info-producto{
-  padding:28px 36px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:12px;
-}
-.info-producto h2{
-  color:var(--primary-color);
-  margin:0 0 6px 0;
-  font-size:1.6rem;
-}
-.info-producto .desc{
-  color:#222;
-  line-height:1.6;
-  font-size:1rem;
-  opacity:0.98;
-  transform: translateY(0);
-  transition: opacity .35s ease, transform .35s ease;
-}
-/* clase que se activa cuando cambia la slide (animación suave) */
-.info-producto .text-visible{
-  opacity:1;
-  transform: translateY(0);
+.carrusel img {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+opacity: 0;
+transform: scale(1.08);
+animation-timing-function: ease-in-out;
 }
 
-/* Pequeño separador entre productos en mobile */
-.productos-section .producto + .producto{
-  margin-top: 18px;
+/* Tres imágenes con tiempos diferentes para dinamismo */
+.carrusel img:nth-child(1) {
+animation: fadeSlide 14s infinite;
+}
+.carrusel img:nth-child(2) {
+animation: fadeSlide 16s infinite 4s;
+}
+.carrusel img:nth-child(3) {
+animation: fadeSlide 18s infinite 8s;
 }
 
-/* Footer (simple y coherente con header) */
-.footer{
-  background-color: #dae6d6;
-  padding: 36px 20px;
-  text-align:center;
-  font-size:14px;
+/* Animación suave con zoom y fundido */
+@keyframes fadeSlide {
+0% { opacity: 0; transform: scale(1.05); }
+10% { opacity: 1; transform: scale(1); }
+35% { opacity: 1; transform: scale(1.02); }
+45% { opacity: 0; transform: scale(1.07); }
+100% { opacity: 0; }
 }
 
-/* BOTÓN flotante WhatsApp (si lo quieres repetir aquí) */
-.whatsapp-float{
-  position:fixed;
-  bottom:24px;
-  right:24px;
-  z-index:999;
-  text-decoration:none;
-}
-.whatsapp-content{
-  display:flex;
-  align-items:center;
-  background:#fff;
-  border-radius:50px;
-  padding:8px 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.whatsapp-content span{ margin-right:10px; color:#333; font-weight:500; }
-.whatsapp-icon{ background:#25d366; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
-.whatsapp-icon img{ width:22px; height:22px; }
-.whatsapp-content:hover{ transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+/* ==================================== /
+/ INFO DEL PRODUCTO /
+/ ==================================== */
 
-/* Responsive */
-@media (max-width: 980px){
-  .producto{ grid-template-columns: 1fr; border-radius:12px; }
-  .carrusel{ min-height:280px; }
-  .info-producto{ padding:18px; text-align:center; }
-  .info-producto h2{ font-size:1.4rem; }
+.info-producto {
+padding: 30px 36px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 12px;
 }
-@media (max-width: 560px){
-  .carrusel{ min-height:220px; }
-  .list_navigator ul{ gap:16px; }
-  .header{ padding:12px 18px; }
-  .whatsapp-content span{ display:none; }
+
+.info-producto h2 {
+color: var(--primary-color);
+margin-bottom: 8px;
+font-size: 1.6rem;
+}
+
+.info-producto .desc {
+color: #222;
+line-height: 1.6;
+font-size: 1rem;
+opacity: 0.98;
+}
+
+/* ==================================== /
+/ FOOTER /
+/ ==================================== */
+
+.footer {
+background-color: #dae6d6;
+color: #000;
+text-align: center;
+padding: 50px 20px;
+font-size: 16px;
+}
+
+.footer-contenido {
+max-width: 900px;
+margin: 0 auto;
+}
+
+.footer-info p {
+margin: 8px 0;
+}
+
+.footer-info a {
+color: #000;
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.footer-info a:hover {
+color: #b8ff91;
+}
+
+.footer-copy {
+margin-top: 20px;
+font-size: 14px;
+opacity: 0.8;
+border-top: 1px solid rgba(255, 255, 255, 0.2);
+padding-top: 10px;
+}
+
+/* ==================================== /
+/ BOTÓN DE WHATSAPP /
+/ ==================================== */
+
+.whatsapp-float {
+position: fixed;
+bottom: 25px;
+right: 25px;
+text-decoration: none;
+z-index: 1000;
+}
+
+.whatsapp-content {
+display: flex;
+align-items: center;
+background: #ffffff;
+color: #444;
+border-radius: 50px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+padding: 6px 12px;
+font-weight: 500;
+font-size: 15px;
+transition: all 0.3s ease;
+}
+
+.whatsapp-content span {
+margin-right: 10px;
+}
+
+.whatsapp-icon {
+background: #25d366;
+border-radius: 50%;
+width: 45px;
+height: 45px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.whatsapp-icon img {
+width: 24px;
+height: 24px;
+}
+
+.whatsapp-content:hover {
+transform: translateY(-3px);
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ==================================== /
+/ RESPONSIVE /
+/ ==================================== */
+
+@media (max-width: 980px) {
+.producto {
+grid-template-columns: 1fr;
+border-radius: 14px;
+}
+.carrusel {
+min-height: 280px;
+}
+.info-producto {
+padding: 20px;
+text-align: center;
+}
+.info-producto h2 {
+font-size: 1.4rem;
+}
+}
+
+@media (max-width: 560px) {
+.carrusel {
+min-height: 220px;
+}
+.productos-section h1 {
+font-size: 1.7rem;
+}
+.list_navigator ul {
+gap: 16px;
+}
+.header {
+padding: 12px 18px;
+}
+.whatsapp-content span {
+display: none;
+}
+}
+/* BOTÓN WHATSAPP CIRCULAR */
+.whatsapp-content {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+.whatsapp-content:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-content span {
+  display: none;
+}
+
+/* ============================= */
+/* RESPONSIVE IGUAL AL INDEX */
+/* ============================= */
+@media (max-width: 980px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 40px;
+  }
+
+  .logo_principal img {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .list_navigator ul {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .list_navigator li {
+    font-size: 13px;
+  }
+
+  .producto {
+    grid-template-columns: 1fr;
+    border-radius: 14px;
+  }
+
+  .carrusel {
+    min-height: 280px;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .info-producto {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .info-producto h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header {
+    padding: 12px 18px;
+  }
+
+  .logo_principal img {
+    width: 130px;
+  }
+
+  .list_navigator ul {
+    gap: 12px;
+  }
+
+  .list_navigator li {
+    font-size: 12px;
+  }
+
+  .productos-section h1 {
+    font-size: 1.7rem;
+  }
+
+  .footer {
+    font-size: 14px;
+    padding: 40px 15px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+  }
+
+  .whatsapp-content span {
+    display: none;
+  }
+}
+/* arreglar tamaño y forma del botón WhatsApp en móvil */
+.whatsapp-float {
+  bottom: 20px;
+  right: 20px;
+}
+
+.whatsapp-content {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ocultar texto (por si no está oculto) */
+.whatsapp-content span {
+  display: none !important;
+}
+
+/* dejar solo el icono y ajustarlo */
+.whatsapp-icon {
+  background: transparent;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.whatsapp-icon img {
+  width: 26px;
+  height: 26px;
+  display: block;
 }

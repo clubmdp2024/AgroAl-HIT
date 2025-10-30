@@ -1,52 +1,286 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+
+/* ============================= */
+/* VARIABLES Y BASE */
+/* ============================= */
 :root {
-  --primary-color: #9edb18; /* verde principal */
-  --secondary-color: ; /* Verde secundario */
-  --text-color: #221b21; /* Color del texto */
-  --background-color: #dae6d6; /* Fondo */
+  --primary-color: #9edb18;
+  --text-color: #221b21;
+  --background-color: #dae6d6;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Asegura que los márgenes y rellenos no afecten las dimensiones */
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Merriweather", serif;
+  background-color: #fff;
+  color: var(--text-color);
+  font-size: 16px; /* Igual que el index */
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: var(--background-color);
-  width: 100%;
   align-items: center;
-  padding-left: 140px;
-  padding-right: 140px;
-  padding-top: 10px;
+  background-color: var(--background-color);
+  padding: 10px 140px;
 }
-.logo_principal {
-  img {
-    width: 190px;
-  }
+
+.logo_principal img {
+  width: 180px;
 }
+
 .list_navigator ul {
-  list-style-type: none;
+  list-style: none;
   display: flex;
   gap: 40px;
 }
-.list_navigator li {
-  display: inline;
-  font-family: Merriweather;
-  font-weight: 400;
-  font-size: 14px;
-  transition: font-weight 0.3s ease, font-size 0.3s ease;
-}
+
 .list_navigator a {
   text-decoration: none;
   color: var(--text-color);
+  font-size: 15px;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
-.list_navigator li:hover {
-  font-weight: 500; 
-  font-size: 15px; 
+
+.list_navigator a:hover {
+  color: var(--primary-color);
+  font-weight: 600;
 }
+
 .chosen_page a {
   color: var(--primary-color);
+}
+
+  /* ============================= */
+/* SECCIÓN DE SERVICIOS */
+/* ============================= */
+.servicios-section {
+  background-color: #f5f9f2;
+  padding: 100px 120px;
+  text-align: center;
+}
+
+.servicio-header h2 {
+  color: var(--primary-color);
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.servicio-header p {
+  font-size: 1.05em;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #333;
+}
+
+/* Tarjetas */
+.servicio-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 50px;
+}
+
+.item-servicio {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 40px 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-servicio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.item-servicio img {
+  width: 90px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.item-servicio h3 {
+  color: var(--primary-color);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+}
+
+.item-servicio p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* ============================= */
+/* ASISTENCIA */
+/* ============================= */
+.asistencia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.asistencia-item {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.asistencia-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.asistencia-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.asistencia-item p {
+  padding: 25px;
+  font-size: 1em;
+  color: #333;
+  text-align: center;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+.footer {
+  background-color: #dae6d6;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 16px; /* mismo tamaño del index */
+}
+
+.footer-contenido {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-info p {
+  margin: 8px 0;
+}
+
+.footer-info a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-info a:hover {
+  color: #b8ff91;
+}
+
+.footer-copy {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 10px;
+}
+
+/* ============================= */
+/* BOTÓN WHATSAPP */
+/* ============================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.whatsapp-content {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  color: #444;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 6px 12px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-content span {
+  margin-right: 10px;
+}
+
+.whatsapp-icon {
+  background: #25d366;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatsapp-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.whatsapp-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Solo ícono en móvil */
+@media (max-width: 600px) {
+  .whatsapp-content span {
+    display: none;
+  }
+  .whatsapp-content {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+@media (max-width: 992px) {
+  .header {
+    padding: 10px 60px;
+  }
+
+  .servicios-section {
+    padding: 80px 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .servicios-section {
+    padding: 60px 30px;
+  }
+
+  .footer {
+    padding: 40px 20px;
+    font-size: 15px;
+  }
 }

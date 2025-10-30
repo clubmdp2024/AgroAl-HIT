@@ -134,3 +134,362 @@
   text-align: justify; /* Justifica los párrafos */
   padding-top: 10px;
 }
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+/* TABLET */
+@media (max-width: 980px) {
+  .header {
+    padding: 15px 40px;
+  }
+
+  .list_navigator ul {
+    gap: 20px;
+  }
+
+  .container_logo img {
+    width: 260px;
+  }
+
+  .company_objectives p {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  .container_vision_mission {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .mission,
+  .vision {
+    width: 90%;
+  }
+
+  .mission p,
+  .vision p {
+    text-align: center;
+  }
+}
+
+/* CELULAR */
+@media (max-width: 560px) {
+  .header {
+    flex-direction: column;
+    padding: 15px 10px;
+    text-align: center;
+  }
+
+  .logo_principal img {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .list_navigator ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .container_background1 {
+    height: 180px;
+  }
+
+  .container_text_principal h1 {
+    font-size: 1.8rem;
+  }
+
+  .container_text_principal p {
+    font-size: 0.9rem;
+  }
+
+  .container_logo img {
+    width: 200px;
+  }
+
+  .company_objectives p {
+    width: 90%;
+    font-size: 13px;
+  }
+
+  .mission h2,
+  .vision h2 {
+    font-size: 20px;
+  }
+
+  .mission p,
+  .vision p {
+    font-size: 13px;
+  }
+
+  .whatsapp-content {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-content img {
+    width: 26px;
+  }
+}
+/* ============================= */
+/* BASE */
+/* ============================= */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #9edb18;
+  --text-color: #221b21;
+  --background-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Merriweather, serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  width: 100%;
+  padding: 10px 140px;
+}
+
+.logo_principal img {
+  width: 190px;
+}
+
+.list_navigator ul {
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+}
+
+.list_navigator li {
+  font-weight: 400;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.list_navigator a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.list_navigator li:hover {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.chosen_page a {
+  color: var(--primary-color);
+}
+
+/* ============================= */
+/* SECCIONES */
+/* ============================= */
+.container_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 270px;
+  text-align: center;
+  color: white;
+}
+
+.container_background1 {
+  position: absolute;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+}
+
+.container_background1 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: scale(1.8);
+  filter: brightness(40%);
+}
+
+.container_text_principal {
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+}
+
+.container_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.container_logo img {
+  width: 340px;
+}
+
+.company_objectives {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company_objectives p {
+  padding-top: 20px;
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  width: 900px;
+}
+
+.container_vision_mission {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 70px;
+}
+
+.mission, .vision {
+  width: 50%;
+  text-align: center;
+}
+
+.mission h2, .vision h2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.mission p, .vision p {
+  font-weight: 300;
+  font-size: 14px;
+  text-align: justify;
+  padding-top: 10px;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+/* TABLET */
+@media (max-width: 980px) {
+  .header {
+    padding: 15px 60px;
+  }
+
+  .list_navigator ul {
+    gap: 25px;
+    flex-wrap: wrap; /* Menú sigue en línea, pero se adapta si hay poco espacio */
+    justify-content: center;
+  }
+
+  .logo_principal img {
+    width: 160px;
+  }
+
+  .container_logo img {
+    width: 260px;
+  }
+
+  .company_objectives p {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  .container_vision_mission {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .mission,
+  .vision {
+    width: 90%;
+  }
+
+  .mission p,
+  .vision p {
+    text-align: center;
+  }
+}
+
+/* CELULAR */
+@media (max-width: 560px) {
+  .header {
+    flex-direction: column;
+    padding: 15px 10px;
+    text-align: center;
+  }
+
+  .logo_principal img {
+    width: 140px;
+    margin-bottom: 10px;
+  }
+
+  .list_navigator ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .container_background1 {
+    height: 180px;
+  }
+
+  .container_text_principal h1 {
+    font-size: 1.8rem;
+  }
+
+  .container_text_principal p {
+    font-size: 0.9rem;
+  }
+
+  .container_logo img {
+    width: 200px;
+  }
+
+  .company_objectives p {
+    width: 90%;
+    font-size: 13px;
+  }
+
+  .mission h2,
+  .vision h2 {
+    font-size: 20px;
+  }
+
+  .mission p,
+  .vision p {
+    font-size: 13px;
+  }
+
+  .whatsapp-content {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+  }
+
+  .whatsapp-content img {
+    width: 26px;
+  }
+}
