@@ -1,28 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos</title>
+    <title>Productos - AgroAl-Hit</title>
     <link rel="stylesheet" href="../styles/productos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- HEADER (igual al index.html) -->
     <header class="header">
       <div class="logo_principal">
-        <img src="../image/agroAl-Hit sin fondo.png" alt="" />
+        <img src="../image/agroAl-Hit sin fondo.png" alt="Logo AgroAl-Hit" />
       </div>
-      <div class="list_navigator">
+      <nav class="list_navigator">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
-          <li class="chosen_page">
-            <a href="">Productos</a>
-          </li>
+          <li class="chosen_page"><a href="#">Productos</a></li>
           <li><a href="../pages/servicios.html">Servicios</a></li>
-          <li>
-            <a href="/pages/quienes-somos.html">Quiénes somos</a>
-          </li>
+          <li><a href="../pages/quienes-somos.html">Quiénes somos</a></li>
         </ul>
-      </div>
+      </nav>
     </header>
+
+    <!-- SECCIÓN DE PRODUCTOS -->
+    <main class="productos-section">
+      <h1>NUESTROS PRODUCTOS</h1>
+
+      <!-- Producto: Plátano Hartón -->
+      <article class="producto">
+        <div class="carrusel">
+          <img src="../image/platanoharton1.jpg" alt="Plátano Hartón 1" class="active" />
+          <img src="../image/platanoharton2.jpg" alt="Plátano Hartón 2" />
+          <img src="../image/platanoharton3.jpeg" alt="Plátano Hartón 3" />
+        </div>
+        <div class="info-producto">
+          <h2>Plátano Hartón</h2>
+          <p class="desc">
+            Variedad de textura firme y sabor pronunciado. Ideal para frituras y
+            preparaciones tradicionales. Rico en potasio y energía natural.
+          </p>
+        </div>
+      </article>
+
+      <!-- Producto: Plátano Burro -->
+      <article class="producto">
+        <div class="carrusel">
+          <img src="../image/platanoburro1.jpg" alt="Plátano Burro 1" class="active" />
+          <img src="../image/platanoburro2.jpg" alt="Plátano Burro 2" />
+          <img src="../image/platanoburro3.jpg" alt="Plátano Burro 3" />
+        </div>
+        <div class="info-producto">
+          <h2>Plátano Burro</h2>
+          <p class="desc">
+            Plátano de forma corta y pulpa suave. Perfecto para asados y postres;
+            ofrece un sabor ligeramente dulce al madurar.
+          </p>
+        </div>
+      </article>
+
+      <!-- Producto: Banano Cavendish -->
+      <article class="producto">
+        <div class="carrusel">
+          <img src="../image/bananocavendish1.jpg" alt="Banano Cavendish 1" class="active" />
+          <img src="../image/bananocavendish2.jpg" alt="Banano Cavendish 2" />
+          <img src="../image/bananocavendish3.jpg" alt="Banano Cavendish 3" />
+        </div>
+        <div class="info-producto">
+          <h2>Banano Cavendish</h2>
+          <p class="desc">
+            Banano de consumo fresco, con dulce sabor y textura suave. Muy
+            apreciado para consumo en crudo y para exportación.
+          </p>
+        </div>
+      </article>
+
+      <!-- Producto: Aguacate Hass -->
+      <article class="producto">
+        <div class="carrusel">
+          <img src="../image/aguacatehass1.jpg" alt="Aguacate Hass 1" class="active" />
+          <img src="../image/aguacatehass2.jpg" alt="Aguacate Hass 2" />
+          <img src="../image/aguacatehass3.webp" alt="Aguacate Hass 3" />
+        </div>
+        <div class="info-producto">
+          <h2>Aguacate Hass</h2>
+          <p class="desc">
+            Pulpa cremosa y sabor suave. Excelente para platos gourmet y con alto
+            contenido de grasas saludables.
+          </p>
+        </div>
+      </article>
+
+      <!-- Producto: Limón Tahití -->
+      <article class="producto">
+        <div class="carrusel">
+          <img src="../image/limontahiti1.jpg" alt="Limón Tahití 1" class="active" />
+          <img src="../image/limontahiti2.jpg" alt="Limón Tahití 2" />
+          <img src="../image/limontahiti3.png" alt="Limón Tahití 3" />
+        </div>
+        <div class="info-producto">
+          <h2>Limón Tahití</h2>
+          <p class="desc">
+            Cítrico aromático con jugo abundante. Ideal para bebidas,
+            conservas e industria gastronómica.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <!-- FOOTER (idéntico al index.html) -->
+    <footer class="footer">
+      <div class="footer-contenido">
+        <div class="footer-info">
+          <p>📍 Carrera 73D #74-16, Barrio Ocama, Carepa, Antioquia - Colombia</p>
+          <p>✉️ <a href="mailto:info@agroalhit.com">info@agroalhit.com</a></p>
+          <p>
+            📞
+            <a href="https://wa.me/573225876116" target="_blank"
+              >+57 322 5876116</a
+            >
+          </p>
+        </div>
+        <div class="footer-copy">
+          <p>© 2025 AgroAl-Hit. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script: carruseles automáticos -->
+    <script>
+      (function () {
+        const intervalMs = 3000;
+        document.querySelectorAll(".producto").forEach((producto) => {
+          const slides = producto.querySelectorAll(".carrusel img");
+          let index = 0;
+          setInterval(() => {
+            slides[index].classList.remove("active");
+            index = (index + 1) % slides.length;
+            slides[index].classList.add("active");
+          }, intervalMs);
+        });
+      })();
+    </script>
   </body>
 </html>
